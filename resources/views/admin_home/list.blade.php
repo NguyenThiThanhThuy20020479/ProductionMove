@@ -1,0 +1,20 @@
+@extends('.main')
+@section('content')
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {!!
+            \App\Http\Controllers\Admin\Home\AccountController::menu()
+        !!}
+    </tbody>
+</table>
+
+@endsection
