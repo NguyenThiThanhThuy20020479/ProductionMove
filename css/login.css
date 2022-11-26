@@ -4,14 +4,13 @@
     box-sizing: border-box;
 }
 
-/* body {
-    height: 100%;
-    background-color: aqua;
+body {
+    
 }
-.login {
+/* .login {
     height: 100%;
     background-color: #261974;
-} */
+} */ 
 .main {
     background-color: white;
     border-radius: 30px;
