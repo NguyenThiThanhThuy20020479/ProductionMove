@@ -145,6 +145,7 @@
       }
       scrollto(this.hash)
     }
+    
   }, true)
 
   /**
