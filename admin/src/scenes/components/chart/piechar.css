@@ -1,0 +1,11 @@
+.chart {
+    width: 300px;
+}
+.pie-chart {
+    display: flex;
+    justify-content:space-around;
+    text-align: center;
+}
+.container {
+    width: 80vh;
+}
