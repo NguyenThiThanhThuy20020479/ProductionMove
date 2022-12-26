@@ -10,7 +10,8 @@ import User from "./scenes/user/user";
 import { UserData } from "./scenes/data";
 import PieChart from "./scenes/components/chart/Executive.jsx"
 import LineChart from "./scenes/components/chart/Facility";
-
+import AddEmployee from "./scenes/user/create";
+import EditEmployee from "./scenes/user/edit";
 function App() {
   const mode = useSelector((state) => state.global.mode);
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
@@ -27,6 +28,8 @@ function App() {
         <Route path="/customers" element= {< User/>}/>
         <Route path="/executive" element= {<PieChart/>}/>
         <Route path="/facility" element= {<LineChart/>}/>
+        <Route path='/customers/create' element={<AddEmployee/>}></Route>
+        <Route path='/customers/edit/:empid' element={<EditEmployee />}></Route>
         </Route>
         </Routes>
 
