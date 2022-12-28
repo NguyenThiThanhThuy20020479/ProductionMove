@@ -52,11 +52,11 @@ const navItems = [
     icon: <BusinessOutlined />,
   },
   {
-    text: "Distribution Agent",
+    text: "Distribution ",
     icon: <ApartmentOutlined />,
   },
   {
-    text: "Maintenance center",
+    text: "Maintenance",
     icon: <CarRepairOutlined />,
   },
   

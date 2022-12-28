@@ -1,11 +1,96 @@
 .chart {
-    width: 300px;
+   width: 250px;
+}
+.select {
+    width: 95vh;
+}
+.excution {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 .pie-chart {
     display: flex;
     justify-content:space-around;
     text-align: center;
 }
-/* .container {
-    width: 80vh;
-} */
+.product-facitily {
+    margin-bottom: 50px;
+}
+.container-facitily {
+    width: 90%;
+    margin: auto;
+}
+.statistical{
+    display: flex;
+    justify-content:space-around;
+    text-align: center;
+    
+}
+.quantity-sold {
+    display: flex;
+    justify-content:space-between;
+    text-align: center;
+    margin-bottom: 70px;
+}
+.chart-font {
+    font-size: 1.5 rem;
+}
+.hasProduced{
+    width:65vh;
+    height:50vh;
+    margin-left: 30px;
+    /* background-color: rgb(186, 6, 66); */
+    
+}
+.select-button {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+.chart-sold {
+    width: 40%;
+}
+.chart-productLine{
+    display: flex;
+    justify-content: space-between;
+}
+.polarArea{
+    width: 500px;
+    margin: auto;
+}
+@media(max-width : 768px) {
+    .container-facitily{
+        display: block;
+        
+    }
+    div.hasProduced{
+        width: 100%;
+        margin-left: 10px;
+    }
+    div.container-facitily{
+        display: block;
+    }
+    .quantity-sold{
+        display: block;
+    }
+    div.select {
+        width: 100%;
+    }
+    .excution {
+        display: block;
+    }
+    .statistical{
+        display: block;
+    }
+    .pie-chart {
+        display: block;
+        text-align: center;
+        width: 100%;
+        margin-left: 50px;
+    }
+    .chart {
+        margin-bottom: 30px;
+    }
+
+}

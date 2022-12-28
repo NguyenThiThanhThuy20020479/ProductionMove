@@ -12,6 +12,8 @@ import PieChart from "./scenes/components/chart/Executive.jsx"
 import LineChart from "./scenes/components/chart/Facility";
 import AddEmployee from "./scenes/user/create";
 import EditEmployee from "./scenes/user/edit";
+import Distribution from "./scenes/components/chart/Distribution";
+import Maintenance from "./scenes/components/chart/Maintenance";
 function App() {
   const mode = useSelector((state) => state.global.mode);
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
@@ -30,6 +32,8 @@ function App() {
         <Route path="/facility" element= {<LineChart/>}/>
         <Route path='/customers/create' element={<AddEmployee/>}></Route>
         <Route path='/customers/edit/:empid' element={<EditEmployee />}></Route>
+        <Route path="/distribution" element= {<Distribution />}/>
+        <Route path="/maintenance" element= {<Maintenance/>}/>
         </Route>
         </Routes>
 
