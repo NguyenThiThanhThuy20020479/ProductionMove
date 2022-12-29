@@ -1,0 +1,46 @@
+body{
+    font-family: 'Roboto', sans-serif;
+  }
+.contact-wrap{
+  padding: 15px;
+}
+
+h1 {
+    color: lighten(#FF512F, 10%);
+    padding: 40px;
+    margin: 0 0 0 0px;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+}
+
+@media (min-width: 768px) { 
+    .contact-wrap{
+      width: 60%;
+      margin: auto;
+    }
+  }
+
+.input-block{
+    background-color: rgba(white, #FF512F, .8);
+    width: 100%;  
+}
+
+.square-button{
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    padding: 0 30px;
+    height: 30px;
+    border: none;
+    margin-top: 10px;
+}
+
+.contact-form {
+    padding-left: 150px;
+}
+
+.form-control {
+    width:300px
+}
