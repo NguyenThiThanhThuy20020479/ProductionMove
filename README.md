@@ -1,3 +1,4 @@
+I. MÔ TẢ NGHIỆP VỤ
 ProductionMove là phần mềm được BigCorp sử dụng để theo dõi vòng đời các sản phẩm của họ. Các cơ sở sản xuất, đại lý phân phối, trung tâm bảo hành đều sử dụng ProductionMove để cộng tác trong việc phân phối và theo dõi vòng đời của sản phẩm.
 Vai trò của các bên tham gia như sau:
 1. Ban điều hành BigCorp
@@ -25,3 +26,12 @@ Vai trò của các bên tham gia như sau:
 - Trả sản phẩm đã sửa chữa xong cho đại lý.
 - Chuyển sản phẩm bảo hành lỗi không thể sửa chữa về cơ sở sản xuất.
 - Thống kê và báo cáo số liệu sản phẩm theo từng loại (trạng thái), theo tháng, quý, năm.
+
+II. Công nghệ sử dụng
+1. Front-end: ReactJS
+2. Back-end: Laravel
+3. Database: MySQL
+
+III. Yêu cầu khi cài đặt
+- Máy chủ web server: NodeJS(phiên bản mới nhất)
+- Cơ sở dữ liệu: import dữ liệu từ "productmove.sql" vào hệ thống quản trị cơ sở dữ liệu mà bạn có(MySQL server, phpMyAdmin,...) với cổng 3306
