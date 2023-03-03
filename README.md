@@ -1,5 +1,4 @@
-I. MÔ TẢ NGHIỆP VỤ
-    ProductionMove là phần mềm được BigCorp sử dụng để theo dõi vòng đời các sản phẩm của họ. Các cơ sở sản xuất, đại lý phân phối, trung tâm bảo hành đều sử dụng  ProductionMove để cộng tác trong việc phân phối và theo dõi vòng đời của sản phẩm.
+I. MÔ TẢ NGHIỆP VỤ: ProductionMove là phần mềm được BigCorp sử dụng để theo dõi vòng đời các sản phẩm của họ. Các cơ sở sản xuất, đại lý phân phối, trung tâm bảo hành đều sử dụng  ProductionMove để cộng tác trong việc phân phối và theo dõi vòng đời của sản phẩm.
 Vai trò của các bên tham gia như sau:
 1. Ban điều hành BigCorp
 - Quản lý danh mục dòng sản phẩm.
