@@ -7,17 +7,12 @@ import { Button, CardActionArea, CardActions, Divider, Grid, Paper } from '@mui/
 import { Stack } from '@mui/system';
 import { styled } from '@mui/material/styles';
 import Collapse from '@mui/material/Collapse';
-import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import CardHeader from '@mui/material/CardHeader';
 import { useState, useEffect } from 'react';
 import {useParams} from 'react-router-dom'
-
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -30,7 +25,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-
+//fetch API danh sách sản phẩm
 export default function Feature() {
     const [expanded, setExpanded] = React.useState(false);
     const handleExpandClick = () => {
@@ -45,19 +40,13 @@ export default function Feature() {
         console.warn("data", result);
         setData(result)
         console.warn(result)
-
-
     }
         fetchData();
     }, []);
 
-    
-   
-
     return (
     <Grid className='tab' container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        {
-        data.map((item)=> (
+        {data.map((item)=> (
         <Grid item xs={6}>
             <Card>
                 <CardHeader
@@ -98,10 +87,7 @@ export default function Feature() {
                         {item.des1}<br/>
                         {item.des2}<br/>
                         {item.des3}
-
-
-                        </Typography>
-                        
+                        </Typography>         
                     </CardContent>
                 <CardActions disableSpacing>
                 <ExpandMore
@@ -125,9 +111,7 @@ export default function Feature() {
             </Card>
         </Grid>
         ))
-}
-    
-    
+        }
     </Grid>
   );
 }

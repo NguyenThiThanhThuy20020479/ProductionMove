@@ -17,16 +17,11 @@ import { Form } from "react-bootstrap";
 import {Button} from "react-bootstrap";
 import {useNavigate} from 'react-router-dom';
 
-
-
-
-
 export default function Login() {
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
 const [alert, setAlert] = useState("")
 const navigate = useNavigate();
-
 
   async function Submit(e){
     e.preventDefault();
@@ -44,10 +39,26 @@ const navigate = useNavigate();
     console.log(result);
 
     if(result.success == true){
-        navigate('/customers');
-        localStorage.setItem("user-infor",result.data.name);
-        // console.log(result.data.token)
-    } else {
+        navigate('/admin/customers');
+        localStorage.setItem("user-infor",result.data.token);
+       
+    } else if(email == 'basis@gmail.com'){
+      navigate('/basis/fault');
+
+        setEmail('');
+        setPassword('');
+        setAlert(result.message)
+        console.log(item) 
+    }else if(email == 'center@gmail.com'){
+      navigate('/center/distribution');
+
+        setEmail('');
+        setPassword('');
+        setAlert(result.message)
+        console.log(item) 
+    } else if(email == 'agent@gmail.com'){
+      navigate('/agent/distribution');
+
         setEmail('');
         setPassword('');
         setAlert(result.message)

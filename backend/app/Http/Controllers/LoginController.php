@@ -9,6 +9,7 @@ use SebastianBergmann\Type\TrueType;
 
 class LoginController extends Controller
 {
+    //đăng nhập, lưu token
     public function login(Request $request){   
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){ 
             /** @var \App\Models\MyUserModel $user **/

@@ -11,12 +11,12 @@ use Illuminate\Support\Facades\DB;
 
 class BasisController extends Controller
 {
-
     //sản phẩm đã sản xuất theo từng cơ sở hoặc tất cả các cơ sở
     public function production($id){
         if($id == 'all'){
             $product = Producedetail::join('products', 'producedetail.product_code', '=', 'products.id')
-            ->select('product_name', DB::raw('sum(amount) as amount'))
+            ->join("productlines", 'productlines.id', '=', 'products.productline')
+            ->select('product_name', DB::raw('sum(amount) as amount'), 'productline_name')
             ->groupBy('product_name')
             ->get();
             return response()->json($product);

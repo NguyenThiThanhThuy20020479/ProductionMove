@@ -10,6 +10,7 @@ import {
 import FlexBetween from "./FlexBetween";
 import { useDispatch } from "react-redux";
 import { setMode } from "../../state/index";
+import LogoutIcon from '@mui/icons-material/Logout';
 import {
   AppBar,
   Button,
@@ -22,6 +23,7 @@ import {
   MenuItem,
   useTheme,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
 // const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
 //   const dispatch = useDispatch();
@@ -36,7 +38,7 @@ const Navbar = ({
 }) => {
     const dispatch = useDispatch();
     const theme = useTheme();
-
+ 
   return (
     <AppBar
       sx={{
@@ -72,10 +74,9 @@ const Navbar = ({
             ) : (
               <LightModeOutlined sx={{ fontSize: "25px" }} />
             )}
-          </IconButton>
-          <IconButton>
-            <SettingsOutlined sx={{ fontSize: "25px" }} />
-          </IconButton>
+          </IconButton >
+          <Link to = '/admin'>
+          Log out</Link>
         </FlexBetween>
       </Toolbar>
     </AppBar>

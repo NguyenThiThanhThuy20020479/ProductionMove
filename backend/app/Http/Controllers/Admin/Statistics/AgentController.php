@@ -6,12 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Models\Exportdetail;
 use App\Models\Importdetail;
 use App\Models\Insuarancedetail;
-use App\Models\Producedetail;
-use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\DB;
 
 class AgentController extends Controller
 {
+    //thống kê sản phẩm theo đại lý phân phối
     public function import($id){
         if($id == 'all'){
             $product = Importdetail::
@@ -59,12 +59,26 @@ class AgentController extends Controller
             ->groupBy('product_name')
             ->get();
             return response()->json($pro);
-
         }
     }
-
+    public function fault2($id){
+        if($id == 'all'){
+            $product = Insuarancedetail::join('products', 'insuarancedetail.product_code', '=', 'products.id')
+            ->select('*')
+            
+            ->get();
+            return response()->json($product);
+        } else {
+            $pro = Insuarancedetail::where('agent_code', $id)
+            ->join('products', 'insuarancedetail.product_code', '=', 'products.id')
+            ->select('*')
+        
+            ->get();
+            return response()->json($pro);
+        }
+    }
     public function all($id){
         
-
     }
+   
 }

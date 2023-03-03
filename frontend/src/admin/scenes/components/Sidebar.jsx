@@ -34,67 +34,74 @@ const navItems = [
   {
     text: "Dashboard",
     icon: <HomeOutlined />,
+    tx: "Dashboard"
+
   },
   {
     text: "Manegement",
     icon: null,
+    tx: "Management"
   },
   {
-    text: "Products",
+    text: "Sản Phẩm",
     icon: <ShoppingCartOutlined />,
+    tx:"products"
   },
   {
-    text: "Customers",
+    text: "Tài khoản",
     icon: <Groups2Outlined />,
+    tx:"customers"
   },
   {
-    text: "Facility",
+    text: "Thống kê theo thời gian",
     icon: <BusinessOutlined />,
+    tx: "facility"
   },
   {
-    text: "Distribution1",
+    text: "Thống kê theo trạng thái",
     icon: <ApartmentOutlined />,
+    tx: "distribution"
   },
   {
-    text: "Maintenance",
+    text: "Trung tâm bảo hành",
     icon: <CarRepairOutlined />,
+    tx:"center"
   },
   {
-    text: "Distribution",
-    icon: <ApartmentOutlined />,
-  },
-  {
-    text: "Service Center",
+    text: "Đại lý phân phối",
     icon: <CarRepairOutlined />,
+    tx: "agent"
   },
   {
-    text: "Agent",
+    text: "Cơ sở sản xuất",
     icon: <CarRepairOutlined />,
-  },
-  {
-    text: "Production Basis",
-    icon: <CarRepairOutlined />,
+    tx: "basis"
   },
   
   {
     text: "Tracking",
     icon: null,
+    tx: "Tracking"
   },
   {
     text: "Products",
     icon: <TrendingUpOutlined />,
+    tx: "Products"
   },
   {
     text: "Chart",
     icon: <BarChartOutlined />,
+    tx: "Chart"
   },
   {
     text:"Facility",
+    tx:"Facility",
     icon: <BarChartOutlined />,
   },
  
   {
     text: "Executive",
+    tx: "Executive",
     icon:<BarChartOutlined />,
   }
 ];
@@ -140,8 +147,7 @@ const Sidebar = ({
               <FlexBetween color={theme.palette.secondary.main}>
                 <Box display="flex" alignItems="center" gap="0.5rem">
                   <Typography variant="h4" fontWeight="bold">
-                    {name}
-                   
+                    Ban quản trị
                   </Typography>
                 </Box>
                 {!isNonMobile && (
@@ -152,7 +158,7 @@ const Sidebar = ({
               </FlexBetween>
             </Box>
             <List>
-              {navItems.map(({ text, icon }) => {
+              {navItems.map(({ text, icon, tx }) => {
                 if (!icon) {
                   return (
                     <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
@@ -160,13 +166,13 @@ const Sidebar = ({
                     </Typography>
                   );
                 }
-                const lcText = text.toLowerCase();
+                const lcText = tx.toLowerCase();
 
                 return (
                   <ListItem key={text} disablePadding>
                     <ListItemButton
                       onClick={() => {
-                        navigate(`/${lcText}`);
+                        navigate(`/admin/${lcText}`);
                         setActive(lcText);
                       }}
                       sx={{

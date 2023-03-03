@@ -1,16 +1,13 @@
 
-import {Line, Bar} from 'react-chartjs-2';
-import * as React from 'react';
-import {useState, useEffect} from 'react';
-import { Button, Stack,Divider } from '@mui/material';
 import { red } from '@mui/material/colors';
-
+/*------------------Thống kê theo đại lý phân phối------------------------*/
 function AgentStatistic() {
     const [data1, setData1] = useState([]);
     const [data, setData] = useState([]);
     const [id, setId] =useState("");
     const [status, setStatus] =useState("");
     const[agent, setAgent] = useState([]);
+    //fetch API danh sách đại lý phân phối
     useEffect(() => {
         async function fetchData() {
             let result =await fetch("http://127.0.0.1:8000/api/admin/list/agents") 
@@ -56,6 +53,8 @@ function AgentStatistic() {
             <div className='tab'>
                 <div >
                     <form action="" onSubmit={Submit}>
+                        
+                       <Stack  direction="row" spacing={2}>
                         <select onChange={(e) => {
                         setId(e.target.value);
                         }} size="sm" >
@@ -79,10 +78,11 @@ function AgentStatistic() {
                             <option value= "fault">
                                 Số lượng lỗi
                             </option>
-                        </select>
+                        </select>   
                         <Button variant="contained" color="warning" type='submit'>
                             Submit
                         </Button>
+                        </Stack>
                     </form>
                 </div>
                 <Bar  data={produceData}
@@ -92,7 +92,7 @@ function AgentStatistic() {
                     display: true,
                     align: 'center',
                     position: 'bottom',
-                    text: "Bảng thống kê số lượng đã sản xuất",
+                    text: "Bảng thống kê số lượng theo đại lí phân phối",
                     font:{
                         size:20,
                         color: red
@@ -101,6 +101,8 @@ function AgentStatistic() {
                 }
                 }}/>
             </div>   
+            <div> 
+            </div>
         </div>
     );
 }

@@ -1,41 +1,37 @@
 <?php
 namespace App\Http\Controllers\Admin;
-
 use App\Http\Controllers\Controller;
 use App\Models\Agent;
 use App\Models\Productionbasi;
 use App\Models\Servicecenter;
 use App\Models\User;
-use Illuminate\Auth\Events\Validated;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-
 class AccountController extends Controller
 {
-    //tat ca cac tk da cap
+    //tất cả các tài khoản đã cấp
     public function allaccount(){   
         $user = User::all();
         return response()->json($user);
     }
-    //tat ca cac dai ly
+    //tất cả các đại lí
     public function allagents(){
         $agent = Agent::all();
         return response()->json($agent);
     }
-    //tat ca cac co so san xuat
+    //tất cả các cơ sở sản xuất
     public function allbasis(){
         $basis = Productionbasi::all();
         return response()->json($basis);
     }
-    //tat ca cac trung tam bao hanh
+    //tất cả các trung tâm bảo hành
     public function allcenters(){
         $center = Servicecenter::all();
         return $center;
     }
-    //them tai khoan cho dai ky phan phoi
+    //cấp tài khoản cho đại lý, cơ sở sản xuất và trung tâm bảo hành
     public function registeragent(Request $request, $id){
         $iden = Agent::find($id);
         $iden->status = 1;
@@ -69,14 +65,7 @@ class AccountController extends Controller
         ];
         return response()->json($response, 400);
     }    
-
-   
-
-           
-    
-    
-
-    //them tai khoan cho co so san xuat
+    //thêm tài khoản cho cơ sở sản xuất
     public function registerbasis(Request $request, $id){
         $iden = Productionbasi::all();
         foreach($iden as $iden){
@@ -101,7 +90,7 @@ class AccountController extends Controller
             } 
         }
     }
-    //them tai khoan cho trung tam bao hanh
+    //thêm tài khoản cho trung tâm bảo hành
     public function registercenter(Request $request, $id){
         $iden = Agent::all();
         foreach($iden as $iden){

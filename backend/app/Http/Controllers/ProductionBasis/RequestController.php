@@ -13,12 +13,12 @@ class RequestController extends Controller
         $request = Importdetail::where('basis_code', $id)
         ->join('products', 'importdetail.product_code', '=','products.id')
         ->join('agents', 'importdetail.agent_code', '=', 'agents.id')
-        ->select('importdetail.id','product_name', 'amount', 'name as agent_name')
-        ->where('status_code', 0)
+        ->select('importdetail.id','product_name', 'amount', 'name as agent_name','importdetail.request_at', 'importdetail.updated_at','importdetail.status_code as status')
+    
         ->get();
         return response()->json($request);
     }
-
+    //xử lý yêu cầu nhập hàng
     public function request($id, $idrequest){
         $request = Importdetail::find($idrequest);
         $request->status_code = 1;

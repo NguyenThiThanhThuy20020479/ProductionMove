@@ -8,7 +8,7 @@ use App\Models\Insuarancedetail;
 use Illuminate\Support\Facades\DB;
 class CenterController extends Controller
 {
-    //san pham nhan ve
+    //sản phẩm nhận về
     public function receive($id){
         if($id == 'all'){
             $product = Insuarancedetail::join('products', 'insuarancedetail.product_code', '=', 'products.id')
@@ -27,7 +27,7 @@ class CenterController extends Controller
             return response()->json($product);
         }
     }
-    //san pham bao hanh xong
+    //sản phẩm bảo hành xong
     public function backtoagent($id){
         if($id == 'all'){
             $product = Insuarancedetail::join('products', 'insuarancedetail.product_code', '=', 'products.id')
@@ -47,7 +47,7 @@ class CenterController extends Controller
         }
 
     }
-    //san pham khong bao hanh duoc
+    //sản phẩm không bảo hành được, trả về
     public function backtobasis($id){
         if($id == 'all'){
             $product = Insuarancedetail::join('products', 'insuarancedetail.product_code', '=', 'products.id')

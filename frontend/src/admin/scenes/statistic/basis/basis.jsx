@@ -4,7 +4,14 @@ import * as React from 'react';
 import {useState, useEffect} from 'react';
 import { Button, Stack,Divider } from '@mui/material';
 import { red } from '@mui/material/colors';
-
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+/*---------------------Thống kê theo cơ sở sản xuất---------------------*/
 function BasisStatistic() {
     const [data1, setData1] = useState([]);
     const [data, setData] = useState([]);
@@ -56,6 +63,7 @@ function BasisStatistic() {
             <div className='tab'>
                 <div >
                     <form action="" onSubmit={Submit}>
+                        <Stack  direction="row" spacing={2}>
                         <select onChange={(e) => {
                         setId(e.target.value);
                         }} size="sm" >
@@ -83,6 +91,7 @@ function BasisStatistic() {
                         <Button variant="contained" color="warning" type='submit'>
                             Submit
                         </Button>
+                        </Stack>
                     </form>
                 </div>
                 <Bar  data={produceData}
@@ -92,7 +101,7 @@ function BasisStatistic() {
                     display: true,
                     align: 'center',
                     position: 'bottom',
-                    text: "Bảng thống kê số lượng đã sản xuất",
+                    text: "Bảng thống kê số lượng theo cơ sở sản xuất",
                     font:{
                         size:20,
                         color: red
@@ -104,5 +113,4 @@ function BasisStatistic() {
         </div>
     );
 }
-
 export default BasisStatistic;

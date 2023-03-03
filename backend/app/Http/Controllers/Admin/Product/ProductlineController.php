@@ -10,10 +10,12 @@ use Illuminate\Support\Facades\DB;
 
 class ProductlineController extends Controller
 {
+    //xem dòng sản phẩm
     public function allproductline(){
         $productline = Productline::all();
         return response()->json($productline);
     }
+    //xem sản phẩm theo dòng sản phẩm
     public function product($id){
         $products = DB::table('products')
                 ->where('productline', '=', $id)

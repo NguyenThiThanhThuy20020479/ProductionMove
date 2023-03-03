@@ -4,7 +4,7 @@ import * as React from 'react';
 import {useState, useEffect} from 'react';
 import { Button, Stack,Divider } from '@mui/material';
 import { red } from '@mui/material/colors';
-
+/*----------------------Xem biểu đồ thống kê theo trạng thái--------------------*/
 function Table() {
   const [data1, setData1] = useState([]);
   const [data2, setData2] = useState([]);
@@ -33,8 +33,6 @@ function Table() {
     }
     fetchData();
   },[]);
-    
-
   const soldData = {
     labels: data1.map((dt) => dt.product_name ),
     datasets: [
@@ -49,7 +47,6 @@ function Table() {
     ]
   }
   const [userData, setUserData] = useState(soldData);
-
   const produceData = {
     labels: data2.map((dt) => dt.product_name ),
     datasets: [
@@ -125,7 +122,8 @@ function Table() {
               title: {
                   display: true,
                   align: 'center',
-                  position: 'bottom',
+                  position: 'top',
+                  text: 'Biểu đồ lượng hàng theo từng trạng thái',
                   font:{
                     size:20,
                     color: red
@@ -134,10 +132,8 @@ function Table() {
           }
       }}/>
       </div>
-      <h1>{txt}</h1>
-        
+      <h1>{txt}</h1>   
     </div>
     );
-}
-
+  }
 export default Table;

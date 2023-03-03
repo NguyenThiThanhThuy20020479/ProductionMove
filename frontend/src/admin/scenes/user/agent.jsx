@@ -1,14 +1,7 @@
-import "./user.css"
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
-import { DeleteOutline } from "@mui/icons-material";
-import { userRows } from "../data";
+
 import { Link } from "react-router-dom";
 import {useState, useEffect} from 'react'
 import * as React from 'react';
-import { MDBBadge, MDBBtn, MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit';
-import { themeSettings } from "./theme";
-
-import "./table.scss";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -17,8 +10,8 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-import { ListSubheader } from "@mui/material";
+import { Typography } from '@mui/material';
+/*---------------Danh sách người dùng-----------------------------*/
 export default function AgentList() {
     const [data, setData] = useState([]);
     useEffect(() => {
@@ -27,23 +20,15 @@ export default function AgentList() {
         result = await result.json();
         console.warn("data", result);
         setData(result)
-
     }
         fetchData();
         console.warn("dt", data)
-
     }, []);
-
-   
-  
 return (
   <div className="col 2">
-    <div className="tab">
-    <Stack direction="row" spacing={2}>
-    <ListSubheader component="div" color="inherit">DANH SACH DAI LY PHAN PHOI</ListSubheader>
-    </Stack>
-    </div>
-
+  <Typography component="h1" align='center' variant='button'>
+    Danh sách đại lý phân phôi
+  </Typography>
   <div className="table">
     <TableContainer component={Paper} >
       <Table sx={{ minWidth: 400 }} aria-label="simple table">
@@ -63,14 +48,14 @@ return (
               <TableCell className="tableCell">{row.address}</TableCell>
               <TableCell className="tableCell">
                 {row.status  == 1 &&
-                  <Button variant="contained">
-                  Da cap
+                  <Button variant="contained" color="success" disabled>
+                  Đã cấp
                 </Button>
                 }
                 {row.status  == 0 &&
-                  <Link  to = {{ pathname: ""+row.id}}>
-                    <Button  variant="contained" color='warning'>
-                      View
+                  <Link  style={{ textDecoration: 'none' }} to = {{ pathname: ""+row.id}}>
+                    <Button size="small"  variant="contained" color='warning'>
+                      Chưa cấp
                     </Button>
                   </Link>
                 }
